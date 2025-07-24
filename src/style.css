@@ -1,40 +1,214 @@
-/* Glass effect for main content */
-body {
-  background: #1e3c72;
+/* Distinct font for Services section subheadings */
+#services .section-text h3 {
+  font-family: 'Segoe UI', 'Arial Black', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #00c3ff;
+  text-shadow: 0 2px 8px #00336633;
+}
+html, body, .main-container {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+/* Add spacing between Contact Us section and bottom image */
+.bottom-image {
+  margin-top: 100vh;
+  text-align: center;
+}
+
+.top-bar .glow-btn,
+.top-bar .glow-btn:before,
+.top-bar .glow-btn:hover,
+.top-bar .glow-btn:focus {
+  background: transparent !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+.section {
+  text-align: center;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  scroll-margin-top: 120px;
+}
+.center-content {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  text-align: center;
+  scroll-margin-top: 120px;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Section styling for About Us and Contact Us */
+/* Responsive section layout */
+/* Fully responsive section layout */
+.section {
+  width: 100%;
+  min-height: 30vh;
+  max-height: 90vh;
+  margin: 6vh 0 0 0;
+  padding: 0 40px; /* More horizontal padding for safety */
+  background: rgba(255,255,255,0.08);
+  border-radius: 2vw;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.section + .section {
+  margin-top: 100vh;
+}
+
+@media (max-width: 600px) {
+  .section {
+    width: 100%;
+    min-height: 20vh;
+    max-height: none;
+    margin: 3vh 0 0 0;
+    padding: 0 5vw;
+    border-radius: 4vw;
+  }
+  .section + .section {
+    margin-top: 100vh;
+  }
+}
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+.section p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+/* Main layout alignment and centering */
+.main-container {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  padding-top: 80px; /* ensures content starts below fixed top-bar */
 }
-  border-radius: 24px;
-.glow-on-hover:hover {
-  filter: drop-shadow(0 0 2em #ff69b4cc);
-}
-/* Glow effect for image on hover */
-.glow-on-hover:hover {
-  box-shadow: 0 0 32px 8px rgba(0, 123, 255, 0.5), 0 2px 16px rgba(0,0,0,0.15);
-}
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #ff69b4;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-    background-color: #ffb6d5;
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.top-bar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(20, 24, 40, 0.92);
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.12);
+  border-radius: 0 0 1.5rem 1.5rem;
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+  height: 64px;
+  align-items: center;
 }
-a:hover {
+.top-bar .glow-btn {
+  pointer-events: auto;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 10vh;
+  width: 100vw;
+}
+  width: 100%;
+  max-width: 700px;
+  min-width: 0;
+  margin: 6vh auto 0 auto;
+  box-sizing: border-box;
+.main-img {
+  max-width: 700px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 60vh;
+  cursor: pointer;
+  transition: filter 0.3s;
+  border-radius: 32px;
+  display: block;
+  margin: 0 auto 32px auto;
+}
+/* Glowy shine effect for top buttons */
+.glow-btn {
+  background: #1e3c72;
+  border-radius: 12px;
+  padding: 0.7em 1.6em;
+  font-size: 1.1em;
+  font-weight: 600;
+  box-shadow: 0 0 16px 2px #00c3ff80, 0 0 32px 8px #1e90ff40;
+  transition: box-shadow 0.3s, background 0.3s;
+  cursor: pointer;
+  outline: none;
+/* Pink glowy shine for buttons */
+/* Blue glowy shine for buttons (original) */
+.glow-btn,
+.glow-btn:before,
+.glow-btn:hover,
+.glow-btn:focus {
+  background: #111 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.glow-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.5) 0%, rgba(0, 123, 255, 0) 80%);
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.glow-btn:hover, .glow-btn:focus {
+  box-shadow: 0 0 32px 8px rgba(0, 123, 255, 0.7), 0 0 64px 16px rgba(0, 123, 255, 0.4);
+  background: rgba(0, 123, 255, 0.2);
+  color: #fff;
+}
+.glow-btn:active {
+  box-shadow: 0 0 8px 2px rgba(0, 123, 255, 0.5);
+}
   color: #535bf2;
 }
-
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -49,23 +223,6 @@ a:hover {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  background: linear-gradient(-45deg, #ffb6d5, #ff69b4, #ffb6d5, #ff69b4);
-  background-size: 400% 400%;
-  animation: gradientBG 10s ease infinite;
-}
-
-@keyframes gradientBG {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 /* Vite logo style */
