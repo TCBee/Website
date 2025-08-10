@@ -14,12 +14,32 @@ document.querySelector('#app').innerHTML = `
         <a href="#contact" id="contact-btn" class="glow-btn">Contact</a>
         <button id="yt-channel-btn" class="glow-btn">YouTube</button>
       </div>
+
+      <script>
+        document.querySelectorAll('.top-bar a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              const viewportHeight = window.innerHeight;
+              const targetRect = target.getBoundingClientRect();
+              const targetTop = targetRect.top + window.scrollY;
+              const scrollPosition = targetTop - (viewportHeight / 2) + (targetRect.height / 2);
+              
+              window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      </script>
       <div class="center-content" id="home">
         <h1>PLM Advisor</h1>
         <p>Welcome to PLM Advisor! We work at the intersection of technology and logistics, delivering both PLM (Product Lifecycle Management) automation and delivery-based logistics services.</p>
       </div>
       <section id="services" class="section section-row">
-        <img class="main-img section-img-left" src="https://via.placeholder.com/320x180?text=Services" alt="Services placeholder" />
+        <img class="main-img section-img-left" src="/images/PLM_Service.jpg" alt="PLM Services" />
         <div class="section-text">
           <h2>Services</h2>
           <h3>CAD Services</h3>

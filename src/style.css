@@ -6,12 +6,51 @@
   color: #00c3ff;
   text-shadow: 0 2px 8px #00336633;
 }
+
+/* Main heading styling */
+.center-content h1 {
+  color: #ff6b6b;
+  text-shadow: 0 3px 12px rgba(255, 107, 107, 0.4);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* Services section heading */
+#services h2 {
+  color: #4ecdc4;
+  text-shadow: 0 2px 10px rgba(78, 205, 196, 0.4);
+  font-weight: 600;
+}
+
+/* About section heading */
+#about h2 {
+  color: #45b7d1;
+  text-shadow: 0 2px 10px rgba(69, 183, 209, 0.4);
+  font-weight: 600;
+}
+
+/* Portfolio section heading */
+#portfolio h2 {
+  color: #f9ca24;
+  text-shadow: 0 2px 10px rgba(249, 202, 36, 0.4);
+  font-weight: 600;
+}
+
+/* Contact section heading */
+#contact h2 {
+  color: #6c5ce7;
+  text-shadow: 0 2px 10px rgba(108, 92, 231, 0.4);
+  font-weight: 600;
+}
+
 html, body, .main-container {
   width: 100vw !important;
   max-width: 100vw !important;
   overflow-x: hidden !important;
   box-sizing: border-box;
 }
+
 /* Add spacing between Contact Us section and bottom image */
 .bottom-image {
   margin-top: 100vh;
@@ -28,6 +67,7 @@ html, body, .main-container {
   box-shadow: none !important;
   text-decoration: none !important;
 }
+
 .section {
   text-align: center;
   min-width: 0;
@@ -35,17 +75,11 @@ html, body, .main-container {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-  min-width: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-  word-break: break-word;
-  overflow-wrap: anywhere;
   word-break: break-word;
   overflow-wrap: anywhere;
   scroll-margin-top: 120px;
 }
+
 .center-content {
   max-width: 700px;
   margin-left: auto;
@@ -55,18 +89,18 @@ html, body, .main-container {
   text-align: center;
   scroll-margin-top: 120px;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 /* Section styling for About Us and Contact Us */
 /* Responsive section layout */
 /* Fully responsive section layout */
 .section {
   width: 100%;
-  min-height: 30vh;
-  max-height: 90vh;
-  margin: 6vh 0 0 0;
-  padding: 0 40px; /* More horizontal padding for safety */
+  min-height: 100vh;
+  padding: 0 40px;
   background: rgba(255,255,255,0.08);
   border-radius: 2vw;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
@@ -77,9 +111,12 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
+  scroll-margin-top: 120px;
+  scroll-snap-align: center;
 }
+
 .section + .section {
-  margin-top: 100vh;
+  margin-top: 0;
 }
 
 @media (max-width: 600px) {
@@ -95,26 +132,30 @@ html {
     margin-top: 100vh;
   }
 }
+
 .section h2 {
   margin-top: 0;
   margin-bottom: 16px;
   font-size: 2rem;
 }
+
 .section p {
   margin: 0;
   font-size: 1.1rem;
 }
+
 /* Main layout alignment and centering */
 .main-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background: transparent;
   position: relative;
   z-index: 1;
-  padding-top: 80px; /* ensures content starts below fixed top-bar */
+  padding-top: 80px;
+  scroll-snap-type: y mandatory;
 }
 
 .top-bar {
@@ -134,6 +175,7 @@ html {
   height: 64px;
   align-items: center;
 }
+
 .top-bar .glow-btn {
   pointer-events: auto;
 }
@@ -143,15 +185,14 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 0;
-  margin-bottom: 10vh;
   width: 100vw;
-}
-  width: 100%;
   max-width: 700px;
   min-width: 0;
-  margin: 6vh auto 0 auto;
+  margin: 0 auto;
   box-sizing: border-box;
+  padding: 20px 0;
+}
+
 .main-img {
   max-width: 700px;
   width: 100%;
@@ -164,6 +205,54 @@ html {
   display: block;
   margin: 0 auto 32px auto;
 }
+
+/* Services section styling */
+#services {
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 40px;
+  min-height: auto;
+  max-height: none;
+}
+
+#services .main-img {
+  width: 40%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin-right: 40px;
+  margin-left: 0;
+  flex-shrink: 0;
+}
+
+#services .section-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+@media (max-width: 900px) {
+  #services {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+  }
+  
+  #services .main-img {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+  
+  #services .section-text {
+    min-width: auto;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
 /* Glowy shine effect for top buttons */
 .glow-btn {
   background: #1e3c72;
@@ -175,7 +264,8 @@ html {
   transition: box-shadow 0.3s, background 0.3s;
   cursor: pointer;
   outline: none;
-/* Pink glowy shine for buttons */
+}
+
 /* Blue glowy shine for buttons (original) */
 .glow-btn,
 .glow-btn:before,
@@ -199,26 +289,23 @@ html {
   transition: opacity 0.3s;
   pointer-events: none;
 }
+
 .glow-btn:hover, .glow-btn:focus {
   box-shadow: 0 0 32px 8px rgba(0, 123, 255, 0.7), 0 0 64px 16px rgba(0, 123, 255, 0.4);
   background: rgba(0, 123, 255, 0.2);
   color: #fff;
 }
+
 .glow-btn:active {
   box-shadow: 0 0 8px 2px rgba(0, 123, 255, 0.5);
-}
-  color: #535bf2;
 }
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  /* Remove static background-color for animation */
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -233,29 +320,10 @@ html {
   transition: filter 300ms;
 }
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #888;
 #app {
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  color: #888;
 }
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
